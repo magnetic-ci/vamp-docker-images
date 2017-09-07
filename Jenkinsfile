@@ -117,7 +117,7 @@ pipeline {
       echo ${workspace}
       '''
       echo pwd()
-      deleteDir()
+      cleanWs()
     }
 
   }
