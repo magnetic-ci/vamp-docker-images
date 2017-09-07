@@ -113,7 +113,9 @@ pipeline {
   }
   post {
     always {
+      sh '''
       echo ${workspace}
+      '''
       echo pwd()
     }
 
