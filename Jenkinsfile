@@ -113,7 +113,8 @@ pipeline {
   }
   post {
     always {
-      deleteDir()
+      echo ${workspace}
+      echo pwd()
     }
 
   }
