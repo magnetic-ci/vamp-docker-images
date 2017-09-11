@@ -113,8 +113,7 @@ pipeline {
   }
   post {
     always {
-      echo pwd()
-      cleanWs()
+      deleteDir()
     }
 
   }
