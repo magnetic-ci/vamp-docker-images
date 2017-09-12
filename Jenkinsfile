@@ -19,14 +19,14 @@ pipeline {
 
   stages {
 
-    // stage('Clean') {
-    //   steps {
-    //     sh '''
-    //     ./build.sh -c
-    //     docker run --rm -v $PWD:/vol alpine sh -c "rm -rf /vol/target"
-    //     '''
-    //   }
-    // }
+    stage('Clean') {
+      steps {
+        sh '''
+        ./build.sh -c
+        docker run --rm -v $PWD:/vol alpine sh -c "rm -rf /vol/target"
+        '''
+      }
+    }
     //
     // stage('Build images') {
     //   steps {
