@@ -114,6 +114,15 @@ pipeline {
   post {
     always {
       deleteDir()
+      sh '''
+      if [ "$VAMP_GIT_BRANCH" = "" ]; then
+        export VAMP_GIT_BRANCH=$(echo $BRANCH_NAME | sed 's/[^a-z0-9_-]/-/gi')
+      fi
+
+      cd tests
+      ./test-remove.sh $VAMP_GIT_BRANCH
+      cd -
+      '''
     }
   }
 }
